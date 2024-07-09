@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authors</title>
+    <link rel="stylesheet" href="/css/principalWeb.css">
+</head>
+<body>
+<header>
+    <h1>List of Authors</h1>
+</header>
+<nav>
+    <a th:href="@{/book/general}">Home</a>
+    <a th:href="@{/book/data}">Catalog</a>
+    <a th:href="@{/author/data}">Authors</a>
+    <a th:href="@{/publisher/data}">Publishers</a>
+    <a th:href="@{/book/contact}">Contact</a>
+</nav>
+<div class="container">
+    <h2>Complete List of Authors</h2>
+    <div class="author-list">
+        <!-- Iterating over authors from the controller -->
+        <div class="author" th:each="author : ${author}">
+            <h3 th:text="${author.name}"></h3>
+            <p th:text="'Nationality: ' + ${author.nationality}"></p>
+        </div>
+    </div>
+</div>
+<footer>
+    <p>Copyright © 2024 - Library</p>
+</footer>
+</body>
+</html>
